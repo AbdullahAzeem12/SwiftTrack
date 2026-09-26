@@ -23,3 +23,5 @@ backend/config/*.json
 backend/certs/*.pem
 backend/certs/*.crt
 backend/certs/*.cer
+google-services.json
+.env
