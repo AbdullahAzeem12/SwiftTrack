@@ -1,0 +1,23 @@
+# Ignore Git history
+.git/
+.gitignore
+
+# Ignore IDE files
+.idea/
+*.iml
+.DS_Store
+
+# Ignore local Gradle build caches and outputs to ensure a 100% sterile Docker build
+.gradle/
+build/
+app/build/
+outputs/
+
+# Ignore backend / NodeJS modules if they exist in the same root
+backend/node_modules/
+backend/build/
+
+# Ignore log files
+*.log
+hs_err_pid*.log
+replay_pid*.log

@@ -1,0 +1,51 @@
+# Base image: Ubuntu with OpenJDK 17 (Required for Android compileSdk 34)
+FROM ubuntu:22.04
+
+# Set Environment Variables for Android SDK and Java
+ENV JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64
+ENV ANDROID_SDK_ROOT=/opt/android-sdk
+ENV ANDROID_HOME=/opt/android-sdk
+ENV PATH=${PATH}:${ANDROID_SDK_ROOT}/cmdline-tools/latest/bin:${ANDROID_SDK_ROOT}/platform-tools
+
+# Prevent interactive prompts during apt-get
+ENV DEBIAN_FRONTEND=noninteractive
+
+# Install required packages (Java 17, wget, unzip, git)
+RUN apt-get update && apt-get install -y \
+    openjdk-17-jdk \
+    wget \
+    unzip \
+    git \
+    curl \
+    && rm -rf /var/lib/apt/lists/*
+
+# Download and Setup Android Command Line Tools
+# (Check developer.android.com/studio#command-tools for the latest version if needed)
+RUN mkdir -p ${ANDROID_SDK_ROOT}/cmdline-tools && \
+    wget -q https://dl.google.com/android/repository/commandlinetools-linux-10406996_latest.zip -O cmdline-tools.zip && \
+    unzip -q cmdline-tools.zip -d ${ANDROID_SDK_ROOT}/cmdline-tools && \
+    mv ${ANDROID_SDK_ROOT}/cmdline-tools/cmdline-tools ${ANDROID_SDK_ROOT}/cmdline-tools/latest && \
+    rm cmdline-tools.zip
+
+# Accept Android SDK licenses
+RUN yes | sdkmanager --licenses >/dev/null
+
+# Install required Android SDK packages based on build.gradle.kts
+# compileSdk 34, build-tools (default for 34), platform-tools
+RUN sdkmanager "platform-tools" "platforms;android-34" "build-tools;34.0.0"
+
+# Set working directory for the project
+WORKDIR /app
+
+# Copy the entire Android project into the Docker container
+COPY . .
+
+# Ensure the Gradle wrapper has execution permissions
+RUN chmod +x ./gradlew
+
+# Build the Android APK (Debug mode for easy physical device installation)
+# This generates the APK in app/build/outputs/apk/debug/
+RUN ./gradlew assembleDebug --no-daemon
+
+# The default command simply keeps the container running or you can mount a volume to extract the APK
+CMD ["echo", "Build complete! APKs are located in /app/app/build/outputs/apk/"]

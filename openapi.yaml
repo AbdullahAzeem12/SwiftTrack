@@ -1,0 +1,91 @@
+openapi: 3.0.3
+info:
+  title: SwiftTrack Airport Express Ticketing API
+  description: Production-grade REST API for SwiftTrack Rail & Airport Transfer Booking System.
+  version: 1.0.0
+servers:
+  - url: http://localhost:8080
+    description: Local Development / Docker Environment
+paths:
+  /api/v1/auth/register:
+    post:
+      summary: Register new customer account
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                fullName: { type: string }
+                email: { type: string }
+                password: { type: string }
+      responses:
+        '200':
+          description: Successful registration with JWT tokens
+  /api/v1/auth/login:
+    post:
+      summary: User login
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+              properties:
+                email: { type: string }
+                password: { type: string }
+      responses:
+        '200':
+          description: JWT Access and Refresh Tokens
+  /api/v1/stations:
+    get:
+      summary: List all active railway and airport terminal stations
+      responses:
+        '200':
+          description: Array of stations
+  /api/v1/journeys/search:
+    get:
+      summary: Search available non-stop journeys and timetable
+      parameters:
+        - name: originId
+          in: query
+          required: true
+          schema: { type: string, format: uuid }
+        - name: destinationId
+          in: query
+          required: true
+          schema: { type: string, format: uuid }
+      responses:
+        '200':
+          description: Available journeys with fare products
+  /api/v1/quotes:
+    post:
+      summary: Create short-lived signed fare price quote
+      responses:
+        '200':
+          description: Signed price quote with 15-min expiration
+  /api/v1/bookings:
+    post:
+      summary: Create pending booking from valid price quote
+      responses:
+        '200':
+          description: Booking created in PAYMENT_PENDING state
+  /api/v1/payments/session:
+    post:
+      summary: Create payment intent session with UUID idempotency key
+      responses:
+        '200':
+          description: Payment session details
+  /api/v1/webhooks/payment-provider:
+    post:
+      summary: Verified payment provider webhook endpoint
+      responses:
+        '200':
+          description: Payment confirmed and ticket issued
+  /api/v1/tickets:
+    get:
+      summary: Retrieve customer's digital tickets
+      responses:
+        '200':
+          description: List of mobile tickets with signed QR payloads

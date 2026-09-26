@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <fragment
+        android:id="@+id/splashFragment"
+        android:name="com.swifttrack.app.presentation.fragments.SplashFragment"
+        android:label="Splash">
+        <action
+            android:id="@+id/action_splash_to_onboarding"
+            app:destination="@id/onboardingFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_to_home"
+            app:destination="@id/homeBookFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_splash_to_login"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/splashFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/onboardingFragment"
+        android:name="com.swifttrack.app.presentation.fragments.OnboardingFragment"
+        android:label="Onboarding">
+        <action
+            android:id="@+id/action_onboarding_to_home"
+            app:destination="@id/homeBookFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/onboardingFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.swifttrack.app.presentation.fragments.LoginFragment"
+        android:label="Login">
+        <action
+            android:id="@+id/action_login_to_register"
+            app:destination="@id/registerFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_login_to_forgot"
+            app:destination="@id/forgotPasswordFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_login_to_home"
+            app:destination="@id/homeBookFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/loginFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.swifttrack.app.presentation.fragments.RegisterFragment"
+        android:label="Register">
+        <action
+            android:id="@+id/action_register_to_home"
+            app:destination="@id/homeBookFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.swifttrack.app.presentation.fragments.ForgotPasswordFragment"
+        android:label="Forgot Password" />
+
+    <fragment
+        android:id="@+id/homeBookFragment"
+        android:name="com.swifttrack.app.presentation.fragments.HomeBookFragment"
+        android:label="Book Journey">
+        <action
+            android:id="@+id/action_home_to_stationSearch"
+            app:destination="@id/stationSearchFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_to_searchResults"
+            app:destination="@id/searchResultsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_to_fareSelection"
+            app:destination="@id/fareSelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_home_to_checkout"
+            app:destination="@id/checkoutFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/stationSearchFragment"
+        android:name="com.swifttrack.app.presentation.fragments.StationSearchFragment"
+        android:label="Select Station" />
+
+    <fragment
+        android:id="@+id/searchResultsFragment"
+        android:name="com.swifttrack.app.presentation.fragments.SearchResultsFragment"
+        android:label="Available Trains">
+        <action
+            android:id="@+id/action_searchResults_to_fareSelection"
+            app:destination="@id/fareSelectionFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+        <action
+            android:id="@+id/action_searchResults_to_checkout"
+            app:destination="@id/checkoutFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/fareSelectionFragment"
+        android:name="com.swifttrack.app.presentation.fragments.FareSelectionFragment"
+        android:label="Select Fare">
+        <action
+            android:id="@+id/action_fareSelection_to_checkout"
+            app:destination="@id/checkoutFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/checkoutFragment"
+        android:name="com.swifttrack.app.presentation.fragments.CheckoutFragment"
+        android:label="Checkout">
+        <action
+            android:id="@+id/action_checkout_to_payment"
+            app:destination="@id/paymentFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/paymentFragment"
+        android:name="com.swifttrack.app.presentation.fragments.PaymentFragment"
+        android:label="Secure Payment">
+        <action
+            android:id="@+id/action_payment_to_ticketDetails"
+            app:destination="@id/ticketDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/homeBookFragment" />
+        <action
+            android:id="@+id/action_payment_to_cardDetails"
+            app:destination="@id/cardDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/cardDetailsFragment"
+        android:name="com.swifttrack.app.presentation.fragments.CardDetailsFragment"
+        android:label="Credit Card Details">
+        <action
+            android:id="@+id/action_cardDetails_to_ticketDetails"
+            app:destination="@id/ticketDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popUpTo="@id/homeBookFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ticketsListFragment"
+        android:name="com.swifttrack.app.presentation.fragments.TicketsListFragment"
+        android:label="My Tickets">
+        <action
+            android:id="@+id/action_ticketsList_to_ticketDetails"
+            app:destination="@id/ticketDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ticketDetailsFragment"
+        android:name="com.swifttrack.app.presentation.fragments.TicketDetailsFragment"
+        android:label="Digital Ticket">
+        <action
+            android:id="@+id/action_ticketDetails_to_refund"
+            app:destination="@id/refundRequestFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/timetableFragment"
+        android:name="com.swifttrack.app.presentation.fragments.TimetableFragment"
+        android:label="Timetable" />
+
+    <fragment
+        android:id="@+id/alertsFragment"
+        android:name="com.swifttrack.app.presentation.fragments.AlertsFragment"
+        android:label="Service Alerts">
+        <action
+            android:id="@+id/action_alerts_to_ticketDetails"
+            app:destination="@id/ticketDetailsFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/accountFragment"
+        android:name="com.swifttrack.app.presentation.fragments.AccountFragment"
+        android:label="Account Settings">
+        <action
+            android:id="@+id/action_account_to_login"
+            app:destination="@id/loginFragment"
+            app:enterAnim="@anim/slide_in_left"
+            app:exitAnim="@anim/slide_out_right"
+            app:popUpTo="@id/nav_graph"
+            app:popUpToInclusive="true" />
+        <action
+            android:id="@+id/action_account_to_help"
+            app:destination="@id/helpSupportFragment"
+            app:enterAnim="@anim/slide_in_right"
+            app:exitAnim="@anim/slide_out_left"
+            app:popEnterAnim="@anim/slide_in_left"
+            app:popExitAnim="@anim/slide_out_right" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/refundRequestFragment"
+        android:name="com.swifttrack.app.presentation.fragments.RefundRequestFragment"
+        android:label="Request Refund" />
+
+    <fragment
+        android:id="@+id/helpSupportFragment"
+        android:name="com.swifttrack.app.presentation.fragments.HelpSupportFragment"
+        android:label="Help &amp; Support" />
+</navigation>

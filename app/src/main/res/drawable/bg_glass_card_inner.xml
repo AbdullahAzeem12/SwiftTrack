@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer Glow Shadow -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="18dp" />
+            <solid android:color="#1A38BDF8" />
+        </shape>
+    </item>
+
+    <!-- Metallic Translucent Glass Surface -->
+    <item android:top="1dp" android:left="1dp" android:right="1dp" android:bottom="1dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="16dp" />
+            <gradient
+                android:angle="135"
+                android:startColor="#33475569"
+                android:centerColor="#22334155"
+                android:endColor="#111E293B" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#94A3B8" />
+        </shape>
+    </item>
+</layer-list>

@@ -1,0 +1,147 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // ============================================================
+    // HELPER FUNCTIONS
+    // ============================================================
+
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.admin == true;
+    }
+
+    // ============================================================
+    // APP FEEDBACK COLLECTION
+    // ============================================================
+
+    match /appFeedback/{feedbackId} {
+      // Authenticated users can create ONLY their own feedback.
+      // Rating must be an integer between 1 and 5.
+      // Status starts as "NEW" and emailNotificationStatus as "PENDING".
+      allow create: if isSignedIn()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.category is string
+        && request.resource.data.category.size() > 0
+        && request.resource.data.status == "NEW"
+        && request.resource.data.emailNotificationStatus == "PENDING";
+
+      // Users can read only their own feedback. Admins can read all.
+      allow read: if isSignedIn()
+        && (resource.data.userId == request.auth.uid || isAdmin());
+
+      // Clients cannot update or delete submitted feedback documents.
+      allow update, delete: if isAdmin();
+    }
+
+    // ============================================================
+    // SUPPORT TICKETS COLLECTION
+    // ============================================================
+
+    match /supportTickets/{ticketId} {
+      // Authenticated users can create support tickets for their own UID.
+      allow create: if isSignedIn()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.category is string
+        && request.resource.data.category.size() > 0
+        && request.resource.data.subject is string
+        && request.resource.data.subject.size() > 0
+        && request.resource.data.description is string
+        && request.resource.data.description.size() > 0
+        && request.resource.data.status == "OPEN"
+        && request.resource.data.emailNotificationStatus == "PENDING";
+
+      // Users can read only their own support tickets.
+      allow read: if isSignedIn()
+        && (resource.data.userId == request.auth.uid || isAdmin());
+
+      // Only admins can update ticket status or delete tickets.
+      allow update, delete: if isAdmin();
+    }
+
+    // ============================================================
+    // PROBLEM REPORTS COLLECTION
+    // ============================================================
+
+    match /problemReports/{reportId} {
+      // Authenticated users can submit problem/bug reports.
+      allow create: if isSignedIn()
+        && request.resource.data.userId == request.auth.uid
+        && request.resource.data.category is string
+        && request.resource.data.category.size() > 0
+        && request.resource.data.subject is string
+        && request.resource.data.subject.size() > 0
+        && request.resource.data.description is string
+        && request.resource.data.description.size() > 0
+        && request.resource.data.status == "NEW"
+        && request.resource.data.emailNotificationStatus == "PENDING";
+
+      // Users can read only their own problem reports.
+      allow read: if isSignedIn()
+        && (resource.data.userId == request.auth.uid || isAdmin());
+
+      // Only admins can update or delete problem reports.
+      allow update, delete: if isAdmin();
+    }
+
+    // ============================================================
+    // USER PROFILE & SUBCOLLECTIONS (Users / users)
+    // ============================================================
+
+    match /Users/{userId} {
+      allow read, write: if isOwner(userId);
+      match /{allSubcollections=**} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    match /users/{userId} {
+      allow read, write: if isOwner(userId);
+      match /{allSubcollections=**} {
+        allow read, write: if isOwner(userId);
+      }
+    }
+
+    // ============================================================
+    // BOOKING SESSIONS & TICKETS COLLECTIONS
+    // ============================================================
+
+    match /bookingSessions/{bookingId} {
+      allow create, update: if isSignedIn()
+        && request.resource.data.userId == request.auth.uid;
+      allow read: if isSignedIn()
+        && resource.data.userId == request.auth.uid;
+      allow delete: if isAdmin();
+    }
+
+    match /tickets/{ticketCode} {
+      allow create, update: if isSignedIn();
+      allow read: if isSignedIn();
+      allow delete: if isAdmin();
+    }
+
+    // ============================================================
+    // PUBLIC APP CONTENT (FAQs, Release Notes, Station Metadata)
+    // ============================================================
+
+    match /appContent/{document=**} {
+      allow read: if true;
+      allow write: if isAdmin();
+    }
+
+    // ============================================================
+    // DEFAULT DENY FOR EVERYTHING ELSE
+    // ============================================================
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}

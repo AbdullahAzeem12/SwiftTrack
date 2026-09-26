@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Outer Glow / Shadow (Subtle) -->
+    <item>
+        <shape android:shape="rectangle">
+            <corners android:radius="24dp" />
+            <solid android:color="#15A8D0E6" />
+        </shape>
+    </item>
+
+    <!-- Main Glass Body with High-End Glass Gradient -->
+    <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="22dp" />
+            <gradient
+                android:angle="135"
+                android:startColor="#3360A5FA"
+                android:centerColor="#221E293B"
+                android:endColor="#110F172A" />
+            <stroke
+                android:width="1.5dp"
+                android:color="#66FFFFFF" />
+        </shape>
+    </item>
+
+    <!-- Inner Neon Glow Edge -->
+    <item android:top="2dp" android:left="2dp" android:right="2dp" android:bottom="2dp">
+        <shape android:shape="rectangle">
+            <corners android:radius="22dp" />
+            <stroke
+                android:width="1dp"
+                android:color="#4DA8D0E6" />
+        </shape>
+    </item>
+</layer-list>

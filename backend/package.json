@@ -1,0 +1,26 @@
+{
+  "name": "swifttrack-darwin-consumer",
+  "version": "1.0.0",
+  "description": "Secure National Rail RDM Darwin Push Kafka Consumer & Firestore Live State Synchronizer for SwiftTrack",
+  "main": "darwin_consumer.js",
+  "scripts": {
+    "start": "node darwin_consumer.js",
+    "dev": "node --watch darwin_consumer.js",
+    "check:darwin": "node darwin_consumer.js --check"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "fast-xml-parser": "^4.3.5",
+    "firebase-admin": "^12.0.0",
+    "kafkajs": "^2.2.4"
+  },
+  "keywords": [
+    "rail-data-marketplace",
+    "darwin-push",
+    "kafka",
+    "swifttrack",
+    "firestore"
+  ],
+  "author": "SwiftTrack Engineering Team",
+  "license": "ISC"
+}

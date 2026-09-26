@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Palette (Light Mode) -->
+    <color name="primary_indigo">#1A103C</color>
+    <color name="primary_plum">#2D1B4E</color>
+    <color name="primary_dark">#120A2B</color>
+
+    <!-- Accent & Highlights -->
+    <color name="accent_amber">#FF9E1B</color>
+    <color name="accent_amber_dark">#E08405</color>
+    <color name="accent_amber_soft">#FFF6E9</color>
+    <color name="accent_blue">#0EA5E9</color>
+    <color name="brand_amber_gold">#FFA726</color>
+
+    <!-- Cinematic Night Sky & Aurora Palette Tokens -->
+    <color name="night_near_black">#05030B</color>
+    <color name="night_midnight_navy">#0A1024</color>
+    <color name="night_deep_blue">#101A38</color>
+    <color name="night_deep_violet">#24114A</color>
+    <color name="aurora_neon_green">#45FFB0</color>
+    <color name="aurora_emerald">#00D889</color>
+    <color name="aurora_soft_cyan">#75FFE0</color>
+    <color name="aurora_magenta">#FF4FA3</color>
+    <color name="lunar_white">#EAF3FF</color>
+    <color name="text_secondary_white">#F4F1F8</color>
+
+    <!-- Header Glass & Background Tokens (Light Mode) -->
+    <color name="header_bg">#1A103C</color>
+    <color name="header_text_title">#FFFFFF</color>
+    <color name="header_text_subtitle">#CBD5E1</color>
+
+    <!-- Surface & Backgrounds -->
+    <color name="surface_light">#F8F9FA</color>
+    <color name="surface_card">#FFFFFF</color>
+    <color name="surface_subtle">#F1F5F9</color>
+    <color name="divider_color">#E2E8F0</color>
+    <color name="bg_cream">#FDFBF7</color>
+
+    <!-- Typography -->
+    <color name="text_primary">#0F172A</color>
+    <color name="text_secondary">#475569</color>
+    <color name="text_muted">#94A3B8</color>
+    <color name="text_on_primary">#FFFFFF</color>
+    <color name="text_on_accent">#1A103C</color>
+
+    <!-- Status & Feedback -->
+    <color name="status_green">#10B981</color>
+    <color name="status_green_bg">#ECFDF5</color>
+    <color name="status_red">#EF4444</color>
+    <color name="status_red_bg">#FEF2F2</color>
+    <color name="status_amber">#F59E0B</color>
+    <color name="status_amber_bg">#FFFBEB</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Good Service Glassmorphic Card Semantic Tokens (Light Mode) -->
+    <color name="status_card_bg">#E60F382C</color>
+    <color name="status_card_stroke">#4010B981</color>
+    <color name="status_card_divider">#26FFFFFF</color>
+    <color name="status_card_text_primary">#34D399</color>
+    <color name="status_card_text_secondary">#D1FAE5</color>
+    <color name="status_card_route_label">#FFFFFF</color>
+    <color name="live_tile_glass_bg">#26000000</color>
+    <color name="live_tile_glass_stroke">#1AFFFFFF</color>
+    <color name="live_timer_text">#6EE7B7</color>
+    <color name="live_status_sched_text">#A7F3D0</color>
+
+    <!-- Platform Badge (Light Mode on Glass) -->
+    <color name="platform_badge_bg">#2538BDF8</color>
+    <color name="platform_badge_text">#38BDF8</color>
+    <color name="platform_badge_stroke">#5038BDF8</color>
+
+    <!-- Glowing Halo Tokens (Light Mode) -->
+    <color name="live_halo_green">#4D10B981</color>
+    <color name="live_halo_amber">#4DF59E0B</color>
+    <color name="live_halo_red">#4DEF4444</color>
+
+    <!-- Quote Banner Tokens (Light Mode) -->
+    <color name="quote_banner_bg">#FFFBEB</color>
+    <color name="quote_banner_stroke">#FDE68A</color>
+    <color name="quote_banner_text">#B45309</color>
+    <color name="action_btn_blue">#0284C7</color>
+    <color name="action_btn_blue_hover">#0369A1</color>
+
+    <!-- Status Badge Chips (Light Mode) -->
+    <color name="chip_on_time_bg">#DCFCE7</color>
+    <color name="chip_on_time_text">#15803D</color>
+    <color name="chip_delayed_bg">#FEF3C7</color>
+    <color name="chip_delayed_text">#B45309</color>
+    <color name="chip_cancelled_bg">#FEE2E2</color>
+    <color name="chip_cancelled_text">#B91C1C</color>
+
+    <!-- Glassmorphic Bottom Navigation (Light Mode) -->
+    <color name="glass_nav_bg">#E6FFFFFF</color>
+    <color name="glass_nav_stroke">#401A103C</color>
+    <color name="glass_nav_shadow">#20000000</color>
+    <color name="glass_nav_pill">#141A103C</color>
+    <color name="glass_nav_pill_stroke">#30FF9E1B</color>
+    <color name="nav_item_active">#1A103C</color>
+    <color name="nav_item_active_accent">#FF9E1B</color>
+    <color name="nav_item_inactive">#8E9BAE</color>
+    <color name="nav_badge_bg">#EF4444</color>
+    <color name="nav_badge_text">#FFFFFF</color>
+
+    <!-- Ticket Perforation & Notch Tokens (Light Mode - Dark Bold Line) -->
+    <color name="ticket_perforation_line">#1E293B</color>
+    <color name="ticket_notch_strip_bg">#FFFFFF</color>
+</resources>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base dark application theme. -->
+    <style name="Theme.SwiftTrack" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Colors -->
+        <item name="colorPrimary">@color/primary_indigo</item>
+        <item name="colorOnPrimary">@color/text_on_primary</item>
+        <item name="colorPrimaryContainer">@color/surface_subtle</item>
+        <item name="colorOnPrimaryContainer">@color/text_primary</item>
+        <item name="colorSecondary">@color/accent_amber</item>
+        <item name="colorOnSecondary">@color/text_on_accent</item>
+
+        <item name="android:statusBarColor">@color/surface_light</item>
+        <item name="android:windowLightStatusBar">false</item>
+        <item name="android:navigationBarColor">@android:color/transparent</item>
+        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
+        <item name="android:windowBackground">@color/surface_light</item>
+
+        <!-- Custom Card Corner Styles -->
+        <item name="shapeAppearanceCornerExtraLarge">@style/ShapeAppearance.SwiftTrack.Card</item>
+    </style>
+
+    <style name="ShapeAppearance.SwiftTrack.Card" parent="ShapeAppearance.Material3.Corner.ExtraLarge">
+        <item name="cornerSize">18dp</item>
+    </style>
+</resources>

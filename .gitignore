@@ -1,0 +1,25 @@
+*.iml
+.gradle
+/local.properties
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+.cxx
+local.properties
+
+# Node backend
+backend/node_modules/
+
+# Local backend secrets
+backend/.env
+backend/config/*.json
+backend/certs/*.pem
+backend/certs/*.crt
+backend/certs/*.cer

@@ -1,0 +1,61 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: swifttrack-backend
+  datasource:
+    url: ${SPRING_DATASOURCE_URL:jdbc:postgresql://localhost:5432/swifttrack}
+    username: ${SPRING_DATASOURCE_USERNAME:swifttrack_user}
+    password: ${SPRING_DATASOURCE_PASSWORD:swifttrack_password}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: validate
+    show-sql: false
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+  data:
+    redis:
+      host: ${REDIS_HOST:localhost}
+      port: ${REDIS_PORT:6379}
+  flyway:
+    enabled: true
+    locations: classpath:db/migration
+  mail:
+    host: ${MAIL_HOST:localhost}
+    port: ${MAIL_PORT:1025}
+    username: ${MAIL_USERNAME:test}
+    password: ${MAIL_PASSWORD:test}
+    properties:
+      mail:
+        smtp:
+          auth: false
+          starttls:
+            enable: false
+
+jwt:
+  secret: ${JWT_SECRET:404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970}
+  access-token-expiration-ms: 900000 # 15 mins
+  refresh-token-expiration-ms: 604800000 # 7 days
+
+payment:
+  default-currency: GBP
+  supported-currencies: GBP,USD
+  stripe:
+    publishable-key: ${STRIPE_PUBLISHABLE_KEY:pk_test_placeholder_key}
+    secret-key: ${STRIPE_SECRET_KEY:sk_test_placeholder_key}
+    webhook-secret: ${STRIPE_WEBHOOK_SECRET:whsec_test_secret_key_12345}
+  paypal:
+    mode: ${PAYPAL_MODE:sandbox}
+    client-id: ${PAYPAL_CLIENT_ID:paypal_test_client_id}
+    client-secret: ${PAYPAL_CLIENT_SECRET:paypal_test_client_secret}
+    webhook-id: ${PAYPAL_WEBHOOK_ID:paypal_test_webhook_id}
+
+springdoc:
+  api-docs:
+    path: /api-docs
+  swagger-ui:
+    path: /swagger-ui.html

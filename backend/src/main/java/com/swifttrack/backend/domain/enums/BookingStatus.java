@@ -1,0 +1,18 @@
+package com.swifttrack.backend.domain.enums;
+
+public enum BookingStatus {
+    DRAFT,
+    QUOTED,
+    PAYMENT_PENDING,
+    PAYMENT_AUTHORIZED,
+    CONFIRMED,
+    TICKET_ISSUED,
+    PAYMENT_ACTION_REQUIRED,
+    PAYMENT_FAILED,
+    PAYMENT_UNKNOWN,
+    EXPIRED,
+    CANCELLED,
+    REFUND_PENDING,
+    PARTIALLY_REFUNDED,
+    REFUNDED
+}

@@ -1,0 +1,22 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="28"
+    android:viewportHeight="28">
+    <!-- Blue Rounded Badge Container -->
+    <path
+        android:fillColor="#003087"
+        android:pathData="M5,0 L23,0 A5,5 0 0,1 28,5 L28,23 A5,5 0 0,1 23,28 L5,28 A5,5 0 0,1 0,23 L0,5 A5,5 0 0,1 5,0 Z" />
+    <!-- Rear P (Deep Blue) -->
+    <path
+        android:fillColor="#0079C1"
+        android:pathData="M9,6 L16,6 C18.5,6 20.5,7.8 20.5,10.2 C20.5,12.4 18.8,14.1 16.6,14.4 L14.8,14.4 L13.5,22 L9,22 L11.5,8 L9,8 Z" />
+    <!-- Front P (Light Blue) -->
+    <path
+        android:fillColor="#00457C"
+        android:pathData="M11.5,8.5 L17.5,8.5 C19.8,8.5 21.5,10.1 21.5,12.2 C21.5,14.2 20,15.8 18,16.1 L16.3,16.1 L15.2,23 L11.5,23 L13.5,10.5 L11.5,10.5 Z" />
+    <!-- White Letter Accent -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:pathData="M10,7 L15.5,7 C17.8,7 19.5,8.6 19.5,10.7 C19.5,12.7 18,14.3 16,14.6 L14.4,14.6 L13.2,21.5 L10.5,21.5 L12.5,9 L10,9 Z" />
+</vector>

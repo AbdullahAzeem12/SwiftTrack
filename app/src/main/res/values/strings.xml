@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">SwiftTrack Express</string>
+    <string name="app_tagline">Airport Rail &amp; Transfer Ticketing</string>
+
+    <!-- Navigation -->
+    <string name="nav_book">Book</string>
+    <string name="nav_tickets">Tickets</string>
+    <string name="nav_timetable">Timetable</string>
+    <string name="nav_alerts">Alerts</string>
+    <string name="nav_account">Account</string>
+
+    <!-- Common UI -->
+    <string name="action_next">Next</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_get_started">Get Started</string>
+    <string name="action_login">Log In</string>
+    <string name="action_register">Register</string>
+    <string name="action_search">Search Trains</string>
+    <string name="action_pay">Pay &amp; Issue Ticket</string>
+    <string name="action_cancel">Cancel</string>
+    <string name="action_apply">Apply</string>
+    <string name="action_retry">Retry</string>
+    <string name="action_refresh">Refresh</string>
+
+    <!-- Search Form -->
+    <string name="label_from">From</string>
+    <string name="label_to">To</string>
+    <string name="label_outbound">Outbound Date</string>
+    <string name="label_return">Return Date</string>
+    <string name="label_passengers">Passengers</string>
+    <string name="label_class">Travel Class</string>
+    <string name="label_promo">Promo Code / Railcard</string>
+    <string name="single_way">Single</string>
+    <string name="return_way">Return</string>
+
+    <!-- Fares & Classes -->
+    <string name="class_standard">Standard Express</string>
+    <string name="class_first">Business First</string>
+
+    <!-- Statuses -->
+    <string name="status_on_time">ON TIME</string>
+    <string name="status_delayed">DELAYED</string>
+    <string name="status_cancelled">CANCELLED</string>
+
+    <!-- Tickets -->
+    <string name="ticket_tab_active">Active</string>
+    <string name="ticket_tab_upcoming">Upcoming</string>
+    <string name="ticket_tab_past">Past</string>
+    <string name="ticket_tab_refunded">Refunded / Cancelled</string>
+
+    <string name="offline_mode_warning">You are currently offline. Showing cached data.</string>
+</resources>

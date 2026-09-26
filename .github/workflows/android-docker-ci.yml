@@ -1,0 +1,36 @@
+name: SwiftTrack Android CI/CD
+
+on:
+  push:
+    branches: [ "main", "master", "development" ]
+  pull_request:
+    branches: [ "main", "master" ]
+
+jobs:
+  build-apk:
+    name: Build APK using Docker
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Code
+        uses: actions/checkout@v4
+
+      - name: Build Android App inside Docker Container
+        run: |
+          echo "Building sterile Android environment..."
+          docker build -f Dockerfile.android -t swifttrack-android-builder .
+
+      - name: Extract APK from Docker
+        run: |
+          echo "Extracting compiled APK..."
+          docker create --name temp-builder swifttrack-android-builder
+          mkdir -p outputs
+          docker cp temp-builder:/app/app/build/outputs/apk/debug/app-debug.apk ./outputs/SwiftTrack-Debug.apk
+          docker rm temp-builder
+
+      - name: Upload APK as Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: SwiftTrack-Debug-APK
+          path: outputs/SwiftTrack-Debug.apk
+          retention-days: 14

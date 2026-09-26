@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Primary Palette (Dark Mode) -->
+    <color name="primary_indigo">#818CF8</color>
+    <color name="primary_plum">#6366F1</color>
+    <color name="primary_dark">#0F172A</color>
+
+    <!-- Accent & Highlights -->
+    <color name="accent_amber">#FFB03A</color>
+    <color name="accent_amber_dark">#F59E0B</color>
+    <color name="accent_amber_soft">#2A2015</color>
+    <color name="accent_blue">#38BDF8</color>
+
+    <!-- Header Glass & Background Tokens (Dark Mode) -->
+    <color name="header_bg">#111827</color>
+    <color name="header_text_title">#F8FAFC</color>
+    <color name="header_text_subtitle">#94A3B8</color>
+
+    <!-- Surface & Backgrounds (Dark Slate & Midnight) -->
+    <color name="surface_light">#0B0F19</color>
+    <color name="surface_card">#1E293B</color>
+    <color name="surface_subtle">#334155</color>
+    <color name="divider_color">#334155</color>
+    <color name="bg_cream">#0B0F19</color>
+
+    <!-- Typography (High Contrast Light Text) -->
+    <color name="text_primary">#F8FAFC</color>
+    <color name="text_secondary">#CBD5E1</color>
+    <color name="text_muted">#64748B</color>
+    <color name="text_on_primary">#0F172A</color>
+    <color name="text_on_accent">#0F172A</color>
+
+    <!-- Status & Feedback (Dark Mode Adjusted) -->
+    <color name="status_green">#34D399</color>
+    <color name="status_green_bg">#064E3B</color>
+    <color name="status_red">#F87171</color>
+    <color name="status_red_bg">#451A1A</color>
+    <color name="status_amber">#FBBF24</color>
+    <color name="status_amber_bg">#452C06</color>
+
+    <color name="black">#000000</color>
+    <color name="white">#FFFFFF</color>
+
+    <!-- Good Service Glassmorphic Card Semantic Tokens (Dark Mode) -->
+    <color name="status_card_bg">#D90A2E24</color>
+    <color name="status_card_stroke">#4010B981</color>
+    <color name="status_card_divider">#20FFFFFF</color>
+    <color name="status_card_text_primary">#34D399</color>
+    <color name="status_card_text_secondary">#A7F3D0</color>
+    <color name="status_card_route_label">#F8FAFC</color>
+    <color name="live_tile_glass_bg">#25000000</color>
+    <color name="live_tile_glass_stroke">#2034D399</color>
+    <color name="live_timer_text">#34D399</color>
+    <color name="live_status_sched_text">#6EE7B7</color>
+
+    <!-- Platform Badge (Dark Mode) -->
+    <color name="platform_badge_bg">#2538BDF8</color>
+    <color name="platform_badge_text">#38BDF8</color>
+    <color name="platform_badge_stroke">#6038BDF8</color>
+
+    <!-- Glowing Halo Tokens (Dark Mode) -->
+    <color name="live_halo_green">#6634D399</color>
+    <color name="live_halo_amber">#66FBBF24</color>
+    <color name="live_halo_red">#66F87171</color>
+
+    <!-- Quote Banner Tokens (Dark Mode) -->
+    <color name="quote_banner_bg">#452C06</color>
+    <color name="quote_banner_stroke">#78350F</color>
+    <color name="quote_banner_text">#FBBF24</color>
+    <color name="action_btn_blue">#38BDF8</color>
+    <color name="action_btn_blue_hover">#0EA5E9</color>
+
+    <!-- Status Badge Chips (Dark Mode) -->
+    <color name="chip_on_time_bg">#064E3B</color>
+    <color name="chip_on_time_text">#34D399</color>
+    <color name="chip_delayed_bg">#78350F</color>
+    <color name="chip_delayed_text">#FBBF24</color>
+    <color name="chip_cancelled_bg">#7F1D1D</color>
+    <color name="chip_cancelled_text">#F87171</color>
+
+    <!-- Glassmorphic Bottom Navigation (Dark Mode) -->
+    <color name="glass_nav_bg">#D90F172A</color>
+    <color name="glass_nav_stroke">#50818CF8</color>
+    <color name="glass_nav_shadow">#80000000</color>
+    <color name="glass_nav_pill">#25818CF8</color>
+    <color name="glass_nav_pill_stroke">#40FFB03A</color>
+    <color name="nav_item_active">#F8FAFC</color>
+    <color name="nav_item_active_accent">#FFB03A</color>
+    <color name="nav_item_inactive">#64748B</color>
+    <color name="nav_badge_bg">#F87171</color>
+    <color name="nav_badge_text">#0F172A</color>
+
+    <!-- Ticket Perforation & Notch Tokens (Dark Mode - Bright Glowing Line) -->
+    <color name="ticket_perforation_line">#E2E8F0</color>
+    <color name="ticket_notch_strip_bg">#1E293B</color>
+</resources>
